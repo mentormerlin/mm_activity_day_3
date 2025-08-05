@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leader Board – Mentor Merlin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Leaderboard specific script -->
+    <script defer src="leaderboard.js"></script>
+    <!-- Use relative asset paths for icons -->
+    <link rel="icon" type="image/png" href="assets/MM_logo.png" />
+    <link rel="shortcut icon" href="assets/MM_logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/MM_logo.png" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/MM_logo.png" alt="Mentor Merlin Logo" />
+                <span class="brand">Mentor Merlin</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="activity.html">Activity</a></li>
+                    <li><a href="leaderboard.html" class="active">Leader Board</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="leaderboard-container">
+        <div class="container">
+            <h2>Activity Leader Board</h2>
+            <p id="leaderboardStatus">Loading submissions...</p>
+            <div id="leaderboardWrapper" class="leaderboard-wrapper"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Mentor Merlin. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // update current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity – Mentor Merlin</title>
+    <!-- Use the same font and icons as other pages -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Use relative asset paths for icons -->
+    <link rel="icon" type="image/png" href="assets/MM_logo.png" />
+    <link rel="shortcut icon" href="assets/MM_logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/MM_logo.png" />
+    <!-- Activity specific script -->
+    <script defer src="activity.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/MM_logo.png" alt="Mentor Merlin Logo" />
+                <span class="brand">Mentor Merlin</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="activity.html" class="active">Activity</a></li>
+                    <li><a href="leaderboard.html">Leader Board</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="activity-container">
+        <!-- Start section -->
+        <div id="activity-start" class="activity-start">
+            <h2>HubSpot Lead Categorisation Activity</h2>
+            <p>Please enter your details to begin. You will be presented with a table of leads and their engagement summaries. Select the appropriate lifecycle stage, lead status and lead category for each record using the dropdowns.</p>
+            <div class="form-group">
+                <label for="activityName">Your Name</label>
+                <input type="text" id="activityName" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+                <label for="activityEmail">Email (used for identification)</label>
+                <input type="email" id="activityEmail" placeholder="Enter your email" required />
+            </div>
+            <button id="startActivityBtn" class="btn">Start Activity</button>
+        </div>
+        <!-- Activity content -->
+        <div id="activity-content" class="activity-content hidden">
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Review the engagement summary for each lead.</li>
+                    <li>Select the appropriate <strong>Lifecycle Stage</strong>, <strong>Lead Status</strong> and <strong>Lead Category</strong> for each lead from the dropdowns based on the summary.</li>
+                    <li>Once all rows are completed, click the <strong>Submit Activity</strong> button to save your responses.</li>
+                </ol>
+            </div>
+            <div class="table-wrapper">
+                <table id="activityTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Email</th>
+                            <th>Lifecycle Stage</th>
+                            <th>Lead Status</th>
+                            <th>Lead Category</th>
+                            <th>Engagement Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activityTableBody">
+                        <!-- Rows inserted by activity.js -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="submitActivity" class="btn" style="margin-top: 1rem;">Submit Activity</button>
+            <p id="activityResult" class="activity-result"></p>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Mentor Merlin. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // update current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
